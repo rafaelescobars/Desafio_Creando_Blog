@@ -1,0 +1,10 @@
+id,email
+1,usuario01@hotmail.com
+2,usuario02@gmail.com
+3,usuario03@gmail.com
+4,usuario04@hotmail.com
+5,usuario05@yahoo.com
+6,usuario06@hotmail.com
+7,usuario07@yahoo.com
+8,usuario08@yahoo.com
+9,usuario09@yahoo.com
