@@ -56,10 +56,9 @@ SELECT s.email, c.id, c.texto FROM (
 SELECT usuarios.* FROM usuarios LEFT JOIN posts on usuarios.id=posts.usuario_id WHERE posts.usuario_id is NULL;
 
 --Listar todos los post con sus comentarios incluyendo aqullos que no poseen coemntarios
-SELECT * FROM posts FULL OUTER JOIN comentarios on posts.id=comentarios.post_id ORDER BY posts.id
-; 
+SELECT posts.*, comentarios.texto, comentarios.fecha FROM posts LEFT JOIN comentarios on posts.id=comentarios.post_id ORDER BY posts.id; 
 
 --Listar todos los usuarios que hayan publicado un post en junio
 SELECT s.fecha, c.id, c.email FROM (
-  SELECT fecha, usuario_id FROM posts WHERE SELECT EXTRACT(MONTH FROM TIMESTAMP fecha) = 6
+  SELECT fecha, usuario_id FROM posts WHERE EXTRACT(MONTH FROM fecha) = 6
   ) AS s INNER JOIN usuarios AS c ON s.usuario_id=c.id ORDER BY c.id ASC;
